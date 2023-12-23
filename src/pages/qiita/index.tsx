@@ -22,19 +22,19 @@ export async function getServerSideProps() {
   const data = res.data;
 
   // 各アイテムのURLからOGP画像を取得
-  const ogImagePromises = data.map(async (item) => {
+  const ogImagePromises = data.map(async (item: Article) => {
     const response = await axios.get(item.url);
     const html = response.data;
     const $ = load(html);
     const ogImage = $('meta[property="og:image"]').attr("content");
-    return ogImage; // ここでOGP画像のURLを返す
+    return ogImage;
   });
 
   // すべてのプロミスが解決されるのを待つ
   const ogImages = await Promise.all(ogImagePromises);
 
   // 各アイテムにOGP画像のURLを追加
-  data.forEach((item, index) => {
+  data.forEach((item: ArticleOG, index: number) => {
     item.ogImage = ogImages[index];
   });
 
