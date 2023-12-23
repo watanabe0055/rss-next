@@ -3,7 +3,9 @@ import { load } from "cheerio";
 import { Article, ArticleOG } from "./type";
 import Rss from "@/component/rss";
 
-const QiitaPage = ({ data }) => {
+type QiitaPageData = ArticleOG[];
+
+const QiitaPage = ({ data }: { data: QiitaPageData }) => {
   return (
     <>
       <Rss data={data} />
