@@ -19,23 +19,24 @@ const Rss = ({ data }: RssProps) => {
           key={index}
           href={item.url}
           target="_blank"
-          className="bg-customYellowLight rounded-lg shadow-md p-6 my-5 mx-2 w-[440px]"
+          className="bg-customYellowLight rounded-lg shadow-md p-6 my-5 mx-2 w-[440px] h-[385px]"
         >
           <div className="flex justify-center">
             <Image
               src={item.ogImage}
-              alt="OGP Image"
+              alt={`${item.title}のOGP画像`}
               width={400}
               height={200}
+              layout="responsive"
             />
           </div>
-          {/* <div className="flex items-center mt-4 gap-4">
+          <div className="flex flex-wrap items-center mt-4 gap-4">
             {item.tags.map((tag, tagIndex) => (
               <Tag key={tagIndex}>
                 <Typography text={tag.name} />
               </Tag>
             ))}
-          </div> */}
+          </div>
           <div className="mt-2">
             <Typography
               text={dayjs(item.created_at).format("YYYY-MM-DD")}
