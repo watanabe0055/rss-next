@@ -19,7 +19,7 @@ const Rss = ({ data }: RssProps) => {
           key={index}
           href={item.url}
           target="_blank"
-          className="bg-customYellowLight rounded-lg shadow-md p-6 my-5 mx-2 w-[440px] h-[385px]"
+          className="bg-customYellowLight rounded-lg shadow-md p-6 my-5 mx-2 w-[440px]"
         >
           <div className="flex justify-center">
             <Image
