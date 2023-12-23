@@ -1,6 +1,6 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { Article, ArticleOG } from "./type";
+import { Article, ArticleOG } from "@/types";
 import Rss from "@/component/rss";
 
 type QiitaPageData = ArticleOG[];

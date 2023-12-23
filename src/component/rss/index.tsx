@@ -1,7 +1,7 @@
 import Typography from "@/atoms/Typography";
 import Tag from "@/atoms/tag";
 import dayjs from "dayjs";
-import { Article, ArticleOG } from "@/pages/qiita/type";
+import { ArticleOG } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
 
