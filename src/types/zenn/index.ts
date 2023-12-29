@@ -1,3 +1,24 @@
+export type ArticleOg = {
+  id: number;
+  post_type: "Article";
+  title: string;
+  slug: string;
+  published: boolean;
+  comments_count: number;
+  liked_count: number;
+  body_letters_count: number;
+  article_type: "tech" | "idea";
+  emoji: string;
+  is_suspending_private: boolean;
+  published_at: string;
+  body_updated_at: string;
+  source_repo_updated_at: string;
+  path: string;
+  user: User;
+  publication: Publication | null;
+  ogImage?: string;
+};
+
 export type Article = {
   id: number;
   post_type: "Article";
@@ -34,7 +55,12 @@ export type Publication = {
   avatar_registered: boolean;
 };
 
-export type Data = {
+export type ArticleOgData = {
+  articles: Array<ArticleOg>;
+  nextPage: number;
+};
+
+export type ArticleData = {
   articles: Array<Article>;
   nextPage: number;
 };

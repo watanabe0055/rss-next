@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["qiita-user-contents.imgix.net"],
+    domains: ["qiita-user-contents.imgix.net", "res.cloudinary.com"],
   },
 };
 
