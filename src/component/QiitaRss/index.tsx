@@ -1,7 +1,7 @@
 import Typography from "@/atoms/Typography";
 import Tag from "@/atoms/tag";
 import dayjs from "dayjs";
-import { ArticleOG } from "@/types";
+import { ArticleOG } from "@/types/qiita";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,17 +9,17 @@ interface RssProps {
   data: Array<ArticleOG> | null | undefined;
 }
 
-const Rss = ({ data }: RssProps) => {
+const QiitaComponent = ({ data }: RssProps) => {
   if (!data) return <div>No data available</div>;
 
   return (
-    <div className="flex flex-wrap justify-center items-start w-full">
+    <div className="flex w-full flex-wrap items-start justify-center">
       {data.map((item: ArticleOG, index) => (
         <Link
           key={index}
           href={item.url}
           target="_blank"
-          className="bg-customYellowLight rounded-lg shadow-md p-6 my-5 mx-2 w-[440px]"
+          className="mx-2 my-5 w-[440px] rounded-lg bg-customYellowLight p-6 shadow-md"
         >
           <div className="flex justify-center">
             <Image
@@ -30,7 +30,7 @@ const Rss = ({ data }: RssProps) => {
               layout="responsive"
             />
           </div>
-          <div className="flex flex-wrap items-center mt-4 gap-4">
+          <div className="mt-4 flex flex-wrap items-center gap-4">
             {item.tags.map((tag, tagIndex) => (
               <Tag key={tagIndex}>
                 <Typography text={tag.name} />
@@ -50,4 +50,4 @@ const Rss = ({ data }: RssProps) => {
   );
 };
 
-export default Rss;
+export default QiitaComponent;

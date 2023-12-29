@@ -1,14 +1,14 @@
 import axios from "axios";
 import { load } from "cheerio";
-import { Article, ArticleOG } from "@/types";
-import Rss from "@/component/rss";
+import { Article, ArticleOG } from "@/types/qiita";
+import QiitaComponent from "@/component/QiitaRss";
 
 type QiitaPageData = ArticleOG[];
 
 const QiitaPage = ({ data }: { data: QiitaPageData }) => {
   return (
     <>
-      <Rss data={data} />
+      <QiitaComponent data={data} />
     </>
   );
 };
