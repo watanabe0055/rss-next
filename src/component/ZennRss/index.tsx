@@ -1,5 +1,6 @@
 import Typography from "@/atoms/Typography";
 import { Article } from "@/types/zenn";
+import dayjs from "dayjs";
 import Link from "next/link";
 import React from "react";
 
@@ -19,6 +20,11 @@ const ZennRss = ({ articles }: Props) => {
           >
             <div className="mx-2 my-5 h-[180px] w-[440px] rounded-lg bg-customYellowLight p-6 shadow-md ">
               <Typography text={article.title} />
+              <Typography
+                text={dayjs(article.published_at).format("YYYY-MM-DD")}
+                size="s"
+                color="gray"
+              />
             </div>
           </Link>
         );
