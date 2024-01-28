@@ -27,7 +27,6 @@ const QiitaComponent = ({ data }: RssProps) => {
               alt={`${item.title}のOGP画像`}
               width={400}
               height={200}
-              layout="responsive"
             />
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-4">

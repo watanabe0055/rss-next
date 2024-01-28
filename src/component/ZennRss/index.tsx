@@ -26,7 +26,6 @@ const ZennRss = ({ articles }: Props) => {
                 alt={`${article.title}のOGP画像`}
                 width={400}
                 height={200}
-                layout="responsive"
               />
             )}
             <div className="p-6">
